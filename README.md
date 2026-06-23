@@ -53,7 +53,7 @@
 
     <!-- TOP BAR ĐĂNG NHẬP & GIỎ HÀNG NHANH -->
     <div class="bg-neutral-100 border-b border-neutral-200 py-2 text-xs text-neutral-600">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <div class="flex items-center gap-4">
                 <button onclick="toggleAdminPanel()" class="hover:text-rawRed-500 font-bold text-neutral-800 flex items-center gap-1">
                     <i class="fa-solid fa-user-shield text-rawRed-500"></i> Trang Admin Quản Trị
@@ -78,10 +78,10 @@
 
     <!-- MAIN HEADER: LOGO & SEARCH BAR -->
     <header class="bg-white py-5 border-b border-neutral-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             
             <!-- Logo RAW PLASTIC -->
-            <div class="flex items-center gap-3 cursor-pointer select-none" onclick="resetFilters()">
+            <div class="flex items-center gap-3 cursor-pointer select-none shrink-0" onclick="resetFilters()">
                 <div class="relative w-12 h-12 rounded-full border-4 border-dashed border-rawRed-500 flex items-center justify-center bg-gradient-to-tr from-yellow-400 via-rawRed-500 to-indigo-600 shadow-md">
                     <i class="fa-solid fa-box-open text-white text-xl"></i>
                 </div>
@@ -91,11 +91,11 @@
                 </div>
             </div>
 
-            <!-- Thanh tìm kiếm thông minh thời gian thực -->
-            <div class="w-full md:w-2/3 relative">
+            <!-- Thanh tìm kiếm thông minh rộng rãi -->
+            <div class="w-full md:flex-grow max-w-4xl relative">
                 <div class="flex">
                     <input type="text" id="global-search" oninput="handleSearch(this.value)" class="w-full border-2 border-rawRed-500 rounded-l-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-0" placeholder="Tìm kiếm tủ nhựa, hộp đựng thực phẩm, bàn ghế nhựa chất lượng cao...">
-                    <button class="bg-rawRed-500 hover:bg-rawRed-600 text-white px-6 rounded-r-xl font-bold text-sm transition-colors flex items-center gap-1.5">
+                    <button class="bg-rawRed-500 hover:bg-rawRed-600 text-white px-6 rounded-r-xl font-bold text-sm transition-colors flex items-center gap-1.5 select-none">
                         <i class="fa-solid fa-magnifying-glass"></i> <span class="hidden sm:inline">Tìm kiếm</span>
                     </button>
                 </div>
@@ -108,7 +108,7 @@
 
     <!-- NAVIGATION BAR -->
     <nav class="bg-white border-b border-neutral-200">
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
                 <!-- Danh sách Menu liên kết với các ID tương tác chủ động -->
                 <div class="flex items-center overflow-x-auto scrollbar-hidden py-1">
@@ -118,10 +118,9 @@
                     <button id="nav-containers" onclick="selectCategory('containers')" class="px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-rawRed-500 border-b-2 border-transparent transition-colors whitespace-nowrap">Hộp & Khay kháng khuẩn</button>
                     <button id="nav-houseware" onclick="selectCategory('houseware')" class="px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-rawRed-500 border-b-2 border-transparent transition-colors whitespace-nowrap">Đồ gia dụng tiện ích</button>
                     <button id="nav-news" onclick="showStaticPage('news')" class="px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-rawRed-500 border-b-2 border-transparent transition-colors whitespace-nowrap">Tin tức</button>
-                    <button id="nav-contact" onclick="showStaticPage('contact')" class="px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-neutral-600 hover:text-rawRed-500 border-b-2 border-transparent transition-colors whitespace-nowrap">Liên hệ</button>
                 </div>
                 <!-- Nút tư vấn AI nổi bật -->
-                <button id="ai-trigger-btn" class="my-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 active:scale-95">
+                <button id="ai-trigger-btn" class="my-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-4 py-2 rounded-xl text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 active:scale-95 whitespace-nowrap shrink-0">
                     <i class="fa-solid fa-robot"></i> Trợ lý Tư vấn AI
                 </button>
             </div>
@@ -130,7 +129,7 @@
 
     <!-- 4 CAM KẾT VÀNG -->
     <section class="bg-white border-b border-neutral-100 py-3.5 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center sm:text-left">
             <div class="flex items-center gap-3.5 p-2 border-r border-neutral-100 last:border-none">
                 <span class="text-2xl text-rawRed-500"><i class="fa-solid fa-truck-fast"></i></span>
                 <div>
@@ -164,7 +163,7 @@
 
     <!-- BREADCRUMB & SEO ANALYZER BAR -->
     <div class="bg-neutral-100 border-b border-neutral-200 py-2.5 text-xs">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
             <div id="breadcrumb-container" class="flex items-center gap-2 text-neutral-500">
                 <span class="hover:text-rawRed-500 cursor-pointer" onclick="resetFilters()">Trang chủ</span>
             </div>
@@ -176,7 +175,7 @@
     </div>
 
     <!-- KHU VỰC NỘI DUNG CHÍNH (MAIN SCREEN LAYOUT) -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6">
+    <main class="flex-grow max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         
         <!-- Khung cảnh báo hoạt động Offline -->
         <div id="fallback-alert" class="hidden mb-6 p-4 rounded-xl border border-sky-100 bg-sky-50 text-sky-800 flex items-start gap-3 shadow-sm">
@@ -188,7 +187,7 @@
         </div>
 
         <!-- BỐ CỤC LƯỚI CHÍNH: SIDEBAR TRÁI (1 COL) & NỘI DUNG PHẢI (3 COLS) -->
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
             
             <!-- SIDEBAR TRÁI (DANH MỤC, BÁN CHẠY, HỖ TRỢ TRỰC TUYẾN) -->
             <aside class="space-y-6">
@@ -293,7 +292,7 @@
 
             </aside>
 
-            <!-- KHU VỰC HIỂN THỊ NỘI DUNG SẢN PHẨM (BÊN PHẢI) -->
+            <!-- KHU VỰC HIỂN THỊ NỘI DUNG SẢN PHẨM (BÊN PHẢI) - Mở rộng tối đa -->
             <section class="lg:col-span-3 space-y-6">
                 
                 <!-- BẢNG ĐIỀU KHIỂN QUẢN TRỊ ADMIN (ADMIN PANEL) - CHỈ HIỂN THỊ KHI BẬT -->
@@ -389,15 +388,15 @@
                     </div>
                 </div>
 
-                <!-- BANNER QUẢNG CÁO LỚN CHÍNH (TỦ NHỰA DUY TÂN) - Thêm ID điều khiển -->
-                <div id="main-promo-banner" class="relative bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-2xl overflow-hidden h-72 md:h-96 flex items-center px-8 md:px-16 text-white shadow-md">
+                <!-- BANNER QUẢNG CÁO LỚN CHÍNH (TỦ NHỰA DUY TÂN) - Tự động giãn nở toàn màn hình -->
+                <div id="main-promo-banner" class="relative bg-gradient-to-r from-neutral-900 to-slate-900 rounded-2xl overflow-hidden h-80 md:h-[400px] flex items-center px-8 md:px-16 text-white shadow-lg">
                     <!-- Ảnh nền mờ nghệ thuật -->
-                    <div class="absolute inset-0 bg-cover bg-center opacity-40 filter blur-sm" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000');"></div>
+                    <div class="absolute inset-0 bg-cover bg-center opacity-40 filter blur-sm" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000'); animate: pulse 10s infinite"></div>
                     
-                    <div class="relative z-10 max-w-lg space-y-4">
-                        <span class="bg-rawRed-500 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Sản phẩm tiêu biểu</span>
+                    <div class="relative z-10 max-w-2xl space-y-4">
+                        <span class="bg-rawRed-500 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Sản phẩm tiêu biểu</span>
                         <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">TỦ NHỰA DUY TÂN <br><span class="text-yellow-400">GIẢM NGAY 10%</span></h2>
-                        <p class="text-xs text-neutral-300 leading-relaxed">Dòng tủ nhựa gia đình huyền thoại sở hữu cấu trúc ngăn tủ kéo mượt mà, khung nhựa nguyên sinh vô cùng chắc chắn và an toàn cho sức khỏe của bé và gia đình.</p>
+                        <p class="text-sm text-neutral-300 leading-relaxed">Dòng tủ nhựa gia đình huyền thoại sở hữu cấu trúc ngăn tủ kéo mượt mà, khung nhựa nguyên sinh vô cùng chắc chắn và an toàn cho sức khỏe của bé và gia đình.</p>
                         <div class="pt-2 flex gap-3">
                             <button onclick="selectCategory('cabinets')" class="bg-rawRed-500 hover:bg-rawRed-600 text-white px-6 py-2.5 rounded-xl text-xs font-bold shadow-lg transition-colors">
                                 Khám phá ngay <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -409,10 +408,10 @@
                     </div>
                 </div>
 
-                <!-- TIÊU ĐỀ VIEW HIỆN TẠI - Thêm ID điều khiển -->
+                <!-- TIÊU ĐỀ VIEW HIỆN TẠI -->
                 <div id="view-title-block" class="bg-white border border-neutral-200 rounded-xl px-5 py-4 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <div>
-                        <h2 id="view-title" class="text-lg font-extrabold text-neutral-900 tracking-tight flex items-center gap-2">
+                        <h2 id="view-title" class="text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
                             <i class="fa-solid fa-box-open text-rawRed-500"></i> Tất cả đồ nhựa & tủ nhựa gia dụng
                         </h2>
                         <p id="view-description" class="text-xs text-neutral-500 mt-1">Duyệt và mua sắm các thiết bị tiện ích gia đình hàng đầu được RAW PLASTIC cam kết chất lượng chính hãng</p>
@@ -420,19 +419,19 @@
                     <span id="products-count-badge" class="bg-neutral-100 text-neutral-600 px-3.5 py-1.5 rounded-full text-xs font-bold">24 sản phẩm</span>
                 </div>
 
-                <!-- LƯỚI KHUNG SẢN PHẨM CHÍNH -->
-                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- LƯỚI KHUNG SẢN PHẨM CHÍNH - Mở rộng lên 4 cột (2xl:grid-cols-4) khi màn hình siêu rộng -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6">
                     <!-- Kết xuất dữ liệu sản phẩm tự động qua Javascript -->
                 </div>
 
-                <!-- BANNER QUẢNG CÁO PHỤ (INOCHI & ĐỒ DÙNG) - Thêm ID điều khiển -->
-                <div id="secondary-banners-block" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- BANNER QUẢNG CÁO PHỤ (INOCHI & ĐỒ DÙNG) -->
+                <div id="secondary-banners-block" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-neutral-950 text-white rounded-xl p-6 flex items-center justify-between shadow-sm relative overflow-hidden group">
                         <div class="absolute inset-0 bg-cover bg-center opacity-30 group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&q=80&w=600');"></div>
-                        <div class="relative z-10 max-w-[60%] space-y-2">
+                        <div class="relative z-10 max-w-[65%] space-y-2">
                             <span class="text-rawRed-500 font-extrabold text-[10px] uppercase tracking-wider block">Ưu đãi Inochi Nhật Bản</span>
                             <h4 class="text-lg font-extrabold leading-tight">Giảm giá 10% các sản phẩm kháng khuẩn</h4>
-                            <p class="text-[10px] text-neutral-300 leading-relaxed">Công nghệ ion bạc kháng khuẩn vượt trội an toàn tuyệt đối.</p>
+                            <p class="text-[10px] text-neutral-300 leading-relaxed">Công nghệ ion bạc kháng khuẩn vượt trội an toàn tuyệt đối cho cả gia đình.</p>
                             <button onclick="selectCategory('containers')" class="mt-2 text-[10px] font-bold text-yellow-400 flex items-center gap-1 hover:underline">
                                 Xem ngay <i class="fa-solid fa-circle-arrow-right"></i>
                             </button>
@@ -442,10 +441,10 @@
 
                     <div class="bg-neutral-950 text-white rounded-xl p-6 flex items-center justify-between shadow-sm relative overflow-hidden group">
                         <div class="absolute inset-0 bg-cover bg-center opacity-30 group-hover:scale-105 transition-transform duration-500" style="background-image: url('https://images.unsplash.com/photo-1581579438747-1dc8d1e0ca96?auto=format&fit=crop&q=80&w=600');"></div>
-                        <div class="relative z-10 max-w-[60%] space-y-2">
+                        <div class="relative z-10 max-w-[65%] space-y-2">
                             <span class="text-emerald-400 font-extrabold text-[10px] uppercase tracking-wider block">Trải nghiệm đỉnh cao</span>
                             <h4 class="text-lg font-extrabold leading-tight">Dùng thử sản phẩm 15 ngày miễn phí</h4>
-                            <p class="text-[10px] text-neutral-300 leading-relaxed">Hoàn trả không mất phí nếu chưa thực sự hài lòng.</p>
+                            <p class="text-[10px] text-neutral-300 leading-relaxed">Hoàn trả dễ dàng và nhận lại tiền không mất phí nếu chưa thực sự hài lòng.</p>
                             <button onclick="showStaticPage('about')" class="mt-2 text-[10px] font-bold text-emerald-400 flex items-center gap-1 hover:underline">
                                 Xem thể lệ <i class="fa-solid fa-circle-arrow-right"></i>
                             </button>
@@ -603,16 +602,30 @@
         </div>
 
         <form id="ai-chat-form" class="p-3 border-t border-neutral-200 bg-white flex gap-2">
-            <input type="text" id="ai-input" required class="flex-grow border border-neutral-200 rounded-xl px-4 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-rawRed-500" placeholder="Đặt câu hỏi về kích thước, dung tích, tư vấn mua sắm...">
+            <input type="text" id="ai-input" required class="flex-grow border border-slate-200 rounded-xl px-4 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-rawRed-500" placeholder="Đặt câu hỏi về kích thước, dung tích, tư vấn mua sắm...">
             <button type="submit" class="bg-rawRed-500 hover:bg-rawRed-600 text-white rounded-xl px-4 py-2 text-xs font-bold transition-all shrink-0">
                 Gửi đi
             </button>
         </form>
     </div>
 
+    <!-- CUSTOM CONFIRM MODAL (Thay thế cho hàm confirm() mặc định của trình duyệt để tránh lỗi trong Iframe) -->
+    <div id="confirm-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl border border-slate-100 space-y-4">
+            <h3 class="font-bold text-base text-neutral-950 flex items-center gap-2">
+                <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> Xác nhận yêu cầu
+            </h3>
+            <p id="confirm-modal-message" class="text-xs text-neutral-600 leading-relaxed"></p>
+            <div class="flex justify-end gap-2 pt-2">
+                <button id="confirm-btn-cancel" class="bg-neutral-100 hover:bg-neutral-200 text-neutral-600 font-bold px-4 py-2 rounded-xl text-xs transition-colors">Hủy bỏ</button>
+                <button id="confirm-btn-ok" class="bg-rawRed-500 hover:bg-rawRed-600 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER CHÂN TRANG ĐÚNG MẪU SAPO VIỆT NAM -->
-    <footer class="bg-neutral-900 text-white border-t border-neutral-800 py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-neutral-900 text-white border-t border-neutral-800 py-10 mt-12">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="space-y-3">
                 <div class="flex items-center gap-2">
                     <div class="w-10 h-10 rounded-full border-2 border-dashed border-rawRed-500 flex items-center justify-center bg-rawRed-500 shadow">
@@ -625,17 +638,9 @@
             <div>
                 <h3 class="font-bold text-sm uppercase tracking-wider text-white border-l-4 border-rawRed-500 pl-3 mb-4">Danh mục hữu ích</h3>
                 <ul class="space-y-2 text-xs text-neutral-400">
-                    <li><button onclick="resetFilters()" class="hover:text-rawRed-500 transition-colors">Trang chủ cửa hàng</button></li>
-                    <li><button onclick="showStaticPage('about')" class="hover:text-rawRed-500 transition-colors">Về RAW PLASTIC</button></li>
-                    <li><button onclick="showStaticPage('news')" class="hover:text-rawRed-500 transition-colors">Tin tức công nghệ đồ nhựa</button></li>
-                    <li><button onclick="showStaticPage('contact')" class="hover:text-rawRed-500 transition-colors">Trung tâm bảo hành & Liên hệ</button></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-bold text-sm uppercase tracking-wider text-white border-l-4 border-rawRed-500 pl-3 mb-4">Thông tin liên hệ</h3>
-                <ul class="space-y-2 text-xs text-neutral-400">
-                    <li><i class="fa-solid fa-location-dot mr-2 text-rawRed-500"></i> Địa chỉ: Toà nhà Ladeco, 266 Đội Cấn, Ba Đình, Hà Nội</li>
-                    <li><i class="fa-solid fa-envelope mr-2 text-rawRed-500"></i> Email: support@sapo.vn</li>
+                    <li><button onclick="resetFilters()" class="hover:text-rawRed-500 transition-colors text-left">Trang chủ cửa hàng</button></li>
+                    <li><button onclick="showStaticPage('about')" class="hover:text-rawRed-500 transition-colors text-left">Về RAW PLASTIC</button></li>
+                    <li><button onclick="showStaticPage('news')" class="hover:text-rawRed-500 transition-colors text-left">Tin tức công nghệ đồ nhựa</button></li>
                 </ul>
             </div>
         </div>
@@ -643,7 +648,7 @@
 
     <!-- SAPO BOTTOM BANNER -->
     <div class="bg-[#00c569] text-white py-3.5">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center gap-4 text-xs font-bold">
                 <span class="flex items-center gap-1"><i class="fa-solid fa-globe text-base"></i> www.sapo.vn</span>
                 <span class="flex items-center gap-1"><i class="fa-solid fa-headset text-base"></i> Hỗ trợ trực tuyến 24/7</span>
@@ -728,7 +733,7 @@
             // Phân cấp con 3.1: Bàn ghế nhựa (chairs_tables)
             { id: 17, name: "Ghế nhựa xếp gọn thông minh Duy Tân", price: 145000, originalPrice: 185000, category: "houseware", subcategory: "chairs_tables", image: "🪑", rating: 4.8, reviews: 110, badge: "Khuyên dùng", description: "Dễ dàng gấp phẳng cất đi gọn gàng, chất liệu nhựa dầy chịu lực tới 100kg." },
             { id: 18, name: "Bàn nhựa mầm non Song Long cao cấp", price: 252000, originalPrice: 320000, category: "houseware", subcategory: "chairs_tables", image: "🧱", rating: 4.8, reviews: 85, badge: "Gọn nhẹ", description: "Mặt bàn nhám chống trơn trượt, bốn chân vững chãi chịu tải lớn cho trẻ em ngồi chơi." },
-            { id: 19, name: "Ghế nhựa đẩu cao Song Long siêu bền", price: 45000, originalPrice: 60000, category: "houseware", subcategory: "chairs_tables", image: "🪑", rating: 4.6, reviews: 135, badge: "Giá rẻ", description: "Màu sắc nổi bật, chân ghế lót đệm chống trượt bám chặt sàn nhà." },
+            { id: 19, name: "Ghế nhựa dẩu cao Song Long siêu bền", price: 45000, originalPrice: 60000, category: "houseware", subcategory: "chairs_tables", image: "🪑", rating: 4.6, reviews: 135, badge: "Giá rẻ", description: "Màu sắc nổi bật, chân ghế lót đệm chống trượt bám chặt sàn nhà." },
             { id: 20, name: "Bát ăn dặm bọc nhựa chống nóng Thái Lan", price: 117000, originalPrice: 145000, category: "houseware", subcategory: "chairs_tables", image: "🥣", rating: 4.5, reviews: 92, badge: "", description: "Phía trong lót inox 304 giữ nhiệt cực tốt, bên ngoài bọc nhựa PP cách nhiệt an toàn." },
 
             // Phân cấp con 3.2: Kệ & Thùng rác (shelves_bins)
@@ -745,6 +750,9 @@
             initCart();
             renderBestSellers();
             setupAdminEventListeners();
+
+            // Thiết lập sự kiện cho Custom Confirm Modal
+            document.getElementById('confirm-btn-cancel').onclick = closeConfirmModal;
         }
 
         // Kiểm tra kết nối MongoDB qua API Backend
@@ -848,7 +856,7 @@
 
         // --- HÀM THIẾT LẬP HOẠT ĐỘNG ACTIVE CHO THANH MENU ĐIỀU HƯỚNG ---
         function setActiveNav(navId) {
-            const navIds = ['nav-home', 'nav-about', 'nav-cabinets', 'nav-containers', 'nav-houseware', 'nav-news', 'nav-contact'];
+            const navIds = ['nav-home', 'nav-about', 'nav-cabinets', 'nav-containers', 'nav-houseware', 'nav-news'];
             navIds.forEach(id => {
                 const el = document.getElementById(id);
                 if (!el) return;
@@ -960,30 +968,50 @@
             `).join('');
         }
 
-        // Xóa sản phẩm qua API Backend
+        // Quản lý Modal Confirm tùy chỉnh tránh lỗi alert/confirm trong môi trường Iframe
+        let confirmCallback = null;
+        function showCustomConfirm(message, callback) {
+            const modal = document.getElementById('confirm-modal');
+            document.getElementById('confirm-modal-message').textContent = message;
+            modal.classList.remove('hidden');
+            confirmCallback = callback;
+        }
+
+        function closeConfirmModal() {
+            document.getElementById('confirm-modal').classList.add('hidden');
+            confirmCallback = null;
+        }
+
+        // Trigger nút xác nhận xóa thực tế
+        document.getElementById('confirm-btn-ok').onclick = function() {
+            if (confirmCallback) {
+                confirmCallback();
+            }
+            closeConfirmModal();
+        }
+
+        // Xóa sản phẩm qua API Backend tích hợp Modal
         window.deleteProduct = async function(id) {
             if (!isBackendConnected) {
                 showToast("Lỗi: Cần kết nối Backend MongoDB để thực hiện xóa!", "❌");
                 return;
             }
 
-            if (!confirm(`Bạn có chắc chắn muốn xóa sản phẩm ID [${id}] khỏi MongoDB?`)) {
-                return;
-            }
-
-            try {
-                const res = await fetch(`${API_BASE}/products/${id}`, { method: "DELETE" });
-                const data = await res.json();
-                
-                if (data.success) {
-                    showToast("Đã xóa sản phẩm thành công khỏi MongoDB!", "🗑️");
-                    await loadProducts();
-                } else {
-                    throw new Error(data.message);
+            showCustomConfirm(`Bạn có chắc chắn muốn xóa sản phẩm ID [${id}] khỏi MongoDB?`, async () => {
+                try {
+                    const res = await fetch(`${API_BASE}/products/${id}`, { method: "DELETE" });
+                    const data = await res.json();
+                    
+                    if (data.success) {
+                        showToast("Đã xóa sản phẩm thành công khỏi MongoDB!", "🗑️");
+                        await loadProducts();
+                    } else {
+                        throw new Error(data.message);
+                    }
+                } catch (err) {
+                    showToast("Lỗi: " + err.message, "❌");
                 }
-            } catch (err) {
-                showToast("Lỗi: " + err.message, "❌");
-            }
+            });
         }
 
         // Nạp nhanh sỉ dữ liệu 24 sản phẩm mẫu lên MongoDB
@@ -1454,7 +1482,7 @@
 
         setupAIChat();
 
-        // Hiển thị nội dung trang tĩnh (Giới thiệu, Tin tức, Liên hệ)
+        // Hiển thị nội dung trang tĩnh (Giới thiệu, Tin tức)
         window.showStaticPage = function(page) {
             const grid = document.getElementById('products-grid');
             const staticBlock = document.getElementById('static-content-block');
@@ -1492,20 +1520,8 @@
                         </div>
                     </div>
                 `;
-            } else if (page === 'contact') {
-                staticBlock.innerHTML = `
-                    <div class="space-y-4">
-                        <h2 class="text-xl font-bold text-rawRed-500 border-b border-neutral-100 pb-2">Thông tin liên hệ & Bảo hành</h2>
-                        <p class="text-xs text-neutral-600">Quý khách vui lòng liên hệ thông tin chi tiết dưới đây để được hỗ trợ mua sắm hoặc bảo hành thiết bị nhanh nhất:</p>
-                        <ul class="space-y-2 text-xs text-neutral-700">
-                            <li><i class="fa-solid fa-location-dot text-rawRed-500 mr-2"></i> <strong>Địa chỉ Hà Nội:</strong> Tòa nhà Ladeco, 266 Đội Cấn, Quận Ba Đình, Hà Nội</li>
-                            <li><i class="fa-solid fa-envelope text-rawRed-500 mr-2"></i> <strong>Email hỗ trợ:</strong> support@sapo.vn</li>
-                            <li><i class="fa-solid fa-clock text-rawRed-500 mr-2"></i> <strong>Giờ làm việc:</strong> 8:00 - 21:30 hàng ngày</li>
-                        </ul>
-                    </div>
-                `;
             }
-            showToast(`Đang hiển thị trang: ${page === 'about' ? 'Giới thiệu' : page === 'news' ? 'Tin tức' : 'Liên hệ'}`, "ℹ️");
+            showToast(`Đang hiển thị trang: ${page === 'about' ? 'Giới thiệu' : 'Tin tức'}`, "ℹ️");
         }
 
         // Tên tiếng Việt phân loại
@@ -1516,6 +1532,7 @@
             return "Khác";
         }
 
+        // Tên tiếng Việt phân loại con
         function getSubcategoryNameVi(sub) {
             if (sub === 'duytan_cabinets') return "Duy Tân Siêu Bền";
             if (sub === 'songlong_cabinets') return "Song Long Đa Sắc";
