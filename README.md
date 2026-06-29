@@ -39,33 +39,33 @@ export default function App() {
     setInput('');
     setIsLoading(true);
 
-    // 1. Check local DB first
+   // 1. Check local DB first
     const found = PROCEDURES.find(p => p.title.toLowerCase().includes(query) || query.includes(p.title.toLowerCase()));
     
-    if (found) {
+  if (found) {
         setMessages(prev => [...prev, { role: 'bot', text: `Tôi tìm thấy thủ tục chính thống trong hệ thống: "${found.title}".\n\n📌 Thời gian: ${found.time}\n📄 Hồ sơ: ${found.documents.join(', ')}\n✅ Các bước: ${found.steps.join(' -> ')}\n💡 Lời khuyên: ${found.advice}` }]);
         setIsLoading(false);
         return;
     }
 
-    // 2. Fallback to Gemini + Search Tool
+   // 2. Fallback to Gemini + Search Tool
     try {
         const apiKey = ""; 
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
         
-        const payload = {
+   const payload = {
             contents: [{ parts: [{ text: `Bạn là trợ lý hành chính chuyên nghiệp. Hãy trả lời câu hỏi sau về thủ tục hành chính tại Việt Nam: "${query}". Nếu cần, hãy tìm kiếm thông tin mới nhất trên internet.` }] }],
             tools: [{ "google_search": {} }],
             systemInstruction: { parts: [{ text: "Trả lời ngắn gọn, chuyên nghiệp, chính xác về thủ tục hành chính Việt Nam. Luôn ưu tiên đưa ra các bước cụ thể hoặc giấy tờ cần thiết." }] }
         };
 
-        const response = await fetch(apiUrl, {
+   const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
 
-        const result = await response.json();
+  const result = await response.json();
         const botResponse = result.candidates[0].content.parts[0].text;
         setMessages(prev => [...prev, { role: 'bot', text: botResponse }]);
     } catch (error) {
@@ -88,7 +88,7 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="flex-1 max-w-6xl mx-auto w-full p-4 md:p-8">
+  <main className="flex-1 max-w-6xl mx-auto w-full p-4 md:p-8">
         {view === 'home' && (
           <div className="space-y-8">
             <h2 className="text-2xl font-bold">Danh mục thủ tục</h2>
@@ -110,7 +110,7 @@ export default function App() {
           </div>
         )}
 
-        {view === 'ai-chat' && (
+  {view === 'ai-chat' && (
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg border h-[600px] flex flex-col">
             <div className="p-4 border-b font-bold bg-blue-50 rounded-t-2xl flex items-center gap-2"><Bot className="text-blue-600"/> Trợ lý AI (Có tra cứu mở rộng)</div>
             <div className="flex-1 p-4 overflow-y-auto space-y-4">
@@ -130,7 +130,7 @@ export default function App() {
         )}
       </main>
 
-      {selectedProc && (
+  {selectedProc && (
         <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl w-full max-w-lg p-6 max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-4"><h3 className="font-bold text-xl">{selectedProc.title}</h3> <button onClick={() => setSelectedProc(null)}><X/></button></div>
